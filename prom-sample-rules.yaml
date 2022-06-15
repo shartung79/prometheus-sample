@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: prom-sample-rules
+spec:
+  groups:
+  - name: prom-sample.rules
+    rules:
+    - alert: ShowcaseAlert
+      expr: avg(python_gauge) >= 5
+      for: 1m
+      annotations:
+        description: 'This alert verifies simple monitoring and alerting capabilities. As an example, you can see a job aid link as annotation.'
+        summary: 'Testalert from sample application.'
+        jobaid_url: 'https://github.kyndryl.net/stephan-hartung/prom-sample-app/#jobaids'
+      labels:
+        severity: info
+        Application: PrometheusSample

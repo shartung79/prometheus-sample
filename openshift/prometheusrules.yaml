@@ -12,7 +12,7 @@ spec:
       annotations:
         description: 'This alert verifies simple monitoring and alerting capabilities. As an example, you can see a job aid link as annotation.'
         summary: 'Testalert from sample application.'
-        jobaid_url: 'https://github.kyndryl.net/stephan-hartung/prom-sample-app/#jobaids'
+        jobaid_url: 'https://github.com/shartung79/prom-sample-app/#jobaids'
       labels:
         severity: info
         Application: PrometheusSample

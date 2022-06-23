@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    name: prometheus-sample
+  name: metrics
+  namespace: my-test
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 1m
+    path: /metrics
+    port: 8080-tcp
+    scrapeTimeout: 15s
+  selector:
+    matchLabels:
+      app: prometheus-sample
